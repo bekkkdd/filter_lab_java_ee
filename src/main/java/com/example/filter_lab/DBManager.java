@@ -19,7 +19,7 @@ public class DBManager {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/filter_lec_db?useUnicode=true&serverTimezone=UTC", "root", ""
+                    "jdbc:mysql://localhost:3306/filter_lab_db?useUnicode=true&serverTimezone=UTC", "root", ""
             );
 
         } catch (Exception e) {
