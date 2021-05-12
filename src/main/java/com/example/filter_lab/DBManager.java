@@ -33,7 +33,7 @@ public class DBManager {
 
         try {
 
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM users");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM users join roles on users.role_id = roles.id");
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
