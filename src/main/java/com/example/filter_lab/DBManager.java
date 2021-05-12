@@ -31,6 +31,27 @@ public class DBManager {
 
         ArrayList<User> userList = new ArrayList<>();
 
+        try{
+
+            PreparedStatement statement = connection.prepareStatement(" SELECT * FROM users");
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                Long id = resultSet.getLong("id");
+                String email = resultSet.getString("email");
+                String password = resultSet.getString("password");
+                String full_name = resultSet.getString("full_name");
+
+                userList.add(new User(id, email, password, full_name));
+            }
+
+            statement.close();
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        
         return userList;
 
     }
